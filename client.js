@@ -13,7 +13,7 @@ const connect = function() {
   })
 
   conn.on("connect", () => {
-    conn.write("Name: HYD");
+    conn.write("Name: DB"); 
   });
 
   conn.on("data", (data) => {
