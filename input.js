@@ -7,6 +7,13 @@ const movementCommands = {
   'd': 'right'
 }
 
+const sayMesage = {
+  'h': 'Hello',
+  'b': 'Bye',
+  'l': 'LOL',
+  'g': 'gg'
+}
+
 const setupInput = function (conn) {
   connection = conn;
   const stdin = process.stdin;
@@ -19,11 +26,15 @@ const setupInput = function (conn) {
 
 const handleUserInput = function (key) {
   const command = movementCommands[key];
+  const message = sayMesage[key];
   if (key === "\u0003") {
     process.exit();
   }
   if (command) {
     connection.write(`Move: ${command}`);
+  }
+  if (message) {
+    connection.write(`Say: ${message}`);
   }
 };
 
