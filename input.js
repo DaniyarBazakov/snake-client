@@ -1,18 +1,6 @@
+const { movementCommands, sayMesage } = require("./constants");
+
 let connection;
-
-const movementCommands = {
-  'w': 'up',
-  'a': 'left',
-  's': 'down',
-  'd': 'right'
-}
-
-const sayMesage = {
-  'h': 'Hello',
-  'b': 'Bye',
-  'l': 'LOL',
-  'g': 'gg'
-}
 
 const setupInput = function (conn) {
   connection = conn;
