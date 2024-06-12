@@ -5,18 +5,16 @@ const connect = function() {
   const conn = net.createConnection({
     ip: IP,
     port: PORT,
-    ip: IP,
-    port: PORT,
   });
 
   conn.setEncoding("utf8");
 
   conn.on("connect", () => {
-    console.log("Successfully connected to game server")
-  })
+    console.log("Successfully connected to game server");
+  });
 
   conn.on("connect", () => {
-    conn.write(`Name: ${INITIALS}`); 
+    conn.write(`Name: ${INITIALS}`);
   });
 
   conn.on("data", (data) => {
